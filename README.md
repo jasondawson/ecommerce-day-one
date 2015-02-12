@@ -29,7 +29,7 @@ There needs to also be the notion of storing Products or Services.  For this par
 
 ### Orders
 
-The company will want to store various infomration about an order, for example the customer, the billing address, the shipping address, payment information, subtotal (total of items added to an order), sales tax (for now just use 7%), total (subtotal + total), products added to the order.
+The company will want to store various information about an order, for example the customer, the billing address, the shipping address, payment information, subtotal (total of items added to an order), sales tax (for now just use 7%), total (subtotal + total), products added to the order.
 
 ### Order Details
 
