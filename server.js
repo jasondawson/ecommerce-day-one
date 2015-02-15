@@ -25,22 +25,22 @@ db.once('open', function() {
 //endpoints
 
 //products
-app.get('/products', ProductCtrl.getProduct);
-app.post('/products', ProductCtrl.postProduct);
+app.get('/api/products', ProductCtrl.getProducts);
+app.post('/api/products', ProductCtrl.postProduct);
 
 //products/:id
-app.get('/products/:id', ProductCtrl.getProductById);
-app.put('/products/:id', ProductCtrl.putProductById);
-app.delete('/products/:id', ProductCtrl.deleteProductById);
+app.get('/api/products/:id', ProductCtrl.getProductById);
+app.put('/api/products/:id', ProductCtrl.updateProductById);
+app.delete('/api/products/:id', ProductCtrl.deleteProductById);
 
 //customers
-app.get('/customers', CustomerCtrl.getCustomer);
-app.post('/customers', CustomerCtrl.postCustomer);
+app.get('/api/customers', CustomerCtrl.getCustomers);
+app.post('/api/customers', CustomerCtrl.postCustomer);
 
 //customers/:id
-app.get('/customers/:id', CustomerCtrl.getCustomerById);
-app.put('/customers/:id', CustomerCtrl.putCustomerById);
-app.delete('/customers/:id', CustomerCtrl.deleteCustomerById);
+app.get('/api/customers/:id', CustomerCtrl.getCustomerById);
+app.put('/api/customers/:id', CustomerCtrl.updateCustomerById);
+app.delete('/api/customers/:id', CustomerCtrl.deleteCustomerById);
 
 
 
