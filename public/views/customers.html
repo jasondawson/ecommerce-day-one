@@ -1,0 +1,10 @@
+<div>
+	<p class="title">Customers</p>
+</div>
+
+<div>
+	<div class="product-container" ng-repeat="customer in vm.customers">
+		<a href="/#/customers/{{customer._id}}"><div class="col-md-2 pull-left text-align-left">{{customer.name}}</div></a>
+		<br class="clear" />
+	</div>
+</div>

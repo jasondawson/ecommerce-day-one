@@ -1,0 +1,11 @@
+<div>
+	<p class="title">Products</p>
+</div>
+
+<div>
+	<div class="product-container" ng-repeat="item in vm.products">
+		<a href="/#/products/{{item._id}}"><div class="col-sm-2 pull-left text-align-left">{{item.name}}</div></a>
+		<div class="col-sm-2 pull-left text-align-left">{{item.price | currency}}</div>
+		<br class="clear" />
+	</div>
+</div>

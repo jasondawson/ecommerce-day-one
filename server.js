@@ -12,6 +12,7 @@ var port = 8080;
 var app = Express();
 var mongoUri = 'mongodb://localhost:27034/eCommerce';
 
+app.use(Express.static(__dirname + '/public'));
 app.use(BodyParser.json());
 
 Mongoose.connect(mongoUri);
