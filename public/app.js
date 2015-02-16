@@ -17,6 +17,16 @@ function config($routeProvider) {
 			controller: 'PCreateCtrl',
 			controllerAs: 'vm'
 		})
+		.when('/products/edit/:id', {
+			templateUrl: '/views/editProduct.html',
+			controller: 'PEditCtrl',
+			controllerAs: 'vm',
+			resolve: {
+				productRef: function($route, mainService) {
+					return mainService.getProduct($route.current.params.id);
+				}
+			}
+		})
 		.when('/products', {
 			templateUrl: '/views/products.html',
 			controller: 'ProductsCtrl',
@@ -55,6 +65,16 @@ function config($routeProvider) {
 		.when('/customers/:id', {
 			templateUrl: '/views/customerDetails.html',
 			controller: 'CustomerCtrl',
+			controllerAs: 'vm',
+			resolve: {
+				customerRef: function($route, mainService) {
+					return mainService.getCustomer($route.current.params.id);
+				}
+			}
+		})
+		.when('/customers/edit/:id', {
+			templateUrl: '/views/editCustomer.html',
+			controller: 'CustomerEditCtrl',
 			controllerAs: 'vm',
 			resolve: {
 				customerRef: function($route, mainService) {

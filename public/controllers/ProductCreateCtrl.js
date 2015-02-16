@@ -13,6 +13,7 @@ function PCreateCtrl ($timeout, mainService) {
 	vm.price = null;
 	vm.created = false;
 	vm.createForm = true;
+	vm.notifyMessage = ' updated in database';
 
 	vm.addProduct = function() {
 		
@@ -22,12 +23,9 @@ function PCreateCtrl ($timeout, mainService) {
 			price: vm.price
 		}
 
-		console.log(newProduct);
-
 		mainService.addProduct(newProduct)
 			.then(function() {
 				vm.enteredName = vm.name;
-				console.log('blah')
 				vm.created = true;
 				vm.name = '';
 				vm.description = '';

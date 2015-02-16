@@ -1,6 +1,8 @@
 <div class="title">Create/Edit Product</div>
 <div class="profile-container">
 	<form ng-submit="vm.addProduct()">
+  <a href="/#/products/{{vm.product._id}}"><i class="fa fa-arrow-left fa-2x pull-right"></i></a>
+  <br class="clear" />
 		<div class="form-group">
     		<label for="name">Product Name</label>
     		<input type="text" class="form-control" id="name" ng-model="vm.name" placeholder="Name" required>
@@ -8,7 +10,8 @@
 
   		<div class="form-group">
     		<label for="description">Description</label>
-    		<input type="text" class="form-control" id="description" ng-model="vm.description" placeholder="Description">
+    		<!-- <input type="text" class="form-control" id="description" ng-model="vm.description" placeholder="Description"> -->
+        <textarea class="form-control" id="description" ng-model="vm.description" placeholder="Description" rows="3"></textarea>
   		</div>
 
 		<div class="form-group">
@@ -21,4 +24,4 @@
 	</form>
 </div>
 
-<div class="Notification" ng-show="vm.created">{{vm.enteredName}} entered in database.</div>
+<div class="notification" ng-show="vm.created"><i class="fa fa-arrow-right"></i>{{vm.enteredName}}{{vm.notifyMessage}}</div>

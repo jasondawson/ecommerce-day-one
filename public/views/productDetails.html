@@ -1,9 +1,9 @@
 <div class="title">Product Details</div>
 
 <div class="profile-container">
-	<p class="bold pull-left">{{vm.product.name}}</p>
-	<a href="/#/product/edit"><i class="fa fa-pencil-square-o fa-2x pull-right"></i></a>
+	<a href="/#/products/edit/{{vm.product._id}}"><i class="fa fa-pencil-square-o fa-2x pull-right"></i></a>
 	<br class="clear" />
+	<p class="bold">{{vm.product.name}}</p>
 	<p>{{vm.product.description}}<br class="clear" /></p>
 	<p>{{vm.product.price | currency}}<br class="clear" /></p>
 

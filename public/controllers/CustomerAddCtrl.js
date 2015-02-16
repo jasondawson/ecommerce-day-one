@@ -25,8 +25,6 @@ function CustomerAddCtrl ($timeout, mainService) {
 			add_kind: vm.radio
 		}
 
-		console.log(newCustomer);
-
 		mainService.addCustomer(newCustomer)
 			.then(function() {
 				vm.enteredName = vm.name;

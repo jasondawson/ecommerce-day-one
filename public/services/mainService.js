@@ -38,7 +38,6 @@ function mainService ($http, $q) {
 		dfd = $q.defer();
 		$http.post(apiUrl + '/api/products', newProduct)
 			.success(function(res) {
-				console.log(res);
 				dfd.resolve(res);
 			})
 			.error(function(err) {
@@ -48,6 +47,29 @@ function mainService ($http, $q) {
 		return dfd.promise;
 	}
 
+	this.updateProductById = function(id, newProduct) {
+		dfd = $q.defer();
+		$http.put(apiUrl + '/api/products/' + id, newProduct)
+			.success(function(res) {
+				dfd.resolve(res);
+			})
+			.error(function(err) {
+				dfd.reject(err);
+			})
+		return dfd.promise;
+	}
+
+	this.deleteProductById = function(id) {
+		dfd = $q.defer();
+		$http.delete(apiUrl + '/api/products/' + id)
+			.success(function(res) {
+				dfd.resolve(res);
+			})
+			.error(function(err) {
+				dfd.reject(err);
+			})
+		return dfd.promise;
+	}
 
 	this.getCustomers = function() {
 		dfd = $q.defer();
@@ -79,13 +101,36 @@ function mainService ($http, $q) {
 		dfd = $q.defer();
 		$http.post(apiUrl + '/api/customers', newCustomer)
 			.success(function(res) {
-				console.log(res);
 				dfd.resolve(res);
 			})
 			.error(function(err) {
 				dfd.reject(err);
 			})
 
+		return dfd.promise;
+	}
+
+	this.updateCustomerById = function(id, newCustomerInfo) {
+		dfd = $q.defer();
+		$http.put(apiUrl + '/api/customers/' + id, newCustomerInfo)
+			.success(function(res) {
+				dfd.resolve(res);
+			}) 
+			.error(function(err) {
+				dfd.reject(err);
+			})
+		return dfd.promise;
+	}
+
+	this.deleteCustomerById = function(id) {
+		dfd = $q.defer();
+		$http.delete(apiUrl + '/api/customers/' + id)
+			.success(function(res) {
+				dfd.resolve(res);
+			})
+			.error(function(err) {
+				dfd.reject(err);
+			})
 		return dfd.promise;
 	}
 

@@ -1,14 +1,26 @@
 <div>
 	<p class="title pull-left">Products</p>
-	<a class="btn btn-default pull-right" href="/#/products/create"><i class="glyphicon glyphicon-plus pull-left"></i><div class="vhr"><br /></div>New</a>
+	<div>
+	<div class="btn btn-default pull-right" ng-click="vm.canDelete = !vm.canDelete" ng-class="vm.canDelete ? 'btn-success' : 'btn-danger'">
+		<i class="glyphicon pull-left" ng-class="vm.canDelete ? 'glyphicon-ok' : 'glyphicon-trash'"></i>
+			<br />
+	</div>
+	<a class="btn btn-default pull-right" href="/#/products/create">
+		<i class="glyphicon glyphicon-plus pull-left"></i>
+			<div class="vhr"><br />
+			</div>
+	New
+	</a>
+	
+	</div>
 	<br class="clear" />
 </div>
 
 
 <div>
 	<div class="product-container" ng-repeat="item in vm.products">
-		<a href="/#/products/{{item._id}}"><div class="col-sm-2 pull-left text-align-left">{{item.name}}</div></a>
-		<div class="col-sm-2 pull-left text-align-left">{{item.price | currency}}</div>
+		<div ng-click="vm.delete(item._id)" ng-show="vm.canDelete"><i class="btn btn-danger btn-xs fa fa-trash-o pull-left"></i></div><a href="/#/products/{{item._id}}"><div class="col-sm-4 pull-left text-align-left">{{item.name}}</div></a>
+		<div class="col-sm-4 pull-left text-align-left">{{item.price | currency}}</div>
 		<br class="clear" />
 	</div>
 </div>
