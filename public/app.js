@@ -12,6 +12,11 @@ function config($routeProvider) {
 			controller: 'MainCtrl',
 			controllerAs: 'vm'
 		})
+		.when('/products/create', {
+			templateUrl: '/views/editProduct.html',
+			controller: 'PCreateCtrl',
+			controllerAs: 'vm'
+		})
 		.when('/products', {
 			templateUrl: '/views/products.html',
 			controller: 'ProductsCtrl',

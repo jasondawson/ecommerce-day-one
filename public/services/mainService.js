@@ -34,6 +34,20 @@ function mainService ($http, $q) {
 		return dfd.promise;
 	}
 
+	this.addProduct = function(newProduct) {
+		dfd = $q.defer();
+		$http.post(apiUrl + '/api/products', newProduct)
+			.success(function(res) {
+				console.log(res);
+				dfd.resolve(res);
+			})
+			.error(function(err) {
+				dfd.reject(err);
+			})
+
+		return dfd.promise;
+	}
+
 
 	this.getCustomers = function() {
 		dfd = $q.defer();
