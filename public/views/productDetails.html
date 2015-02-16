@@ -1,10 +1,13 @@
 <div class="title">Product Details</div>
 
 <div class="profile-container">
-	<a href="/#/products/edit/{{vm.product._id}}"><i class="fa fa-pencil-square-o fa-2x pull-right"></i></a>
+	<a href="/#/products/edit/{{vm.product._id}}"><i class="fa fa-pencil-square-o fa-2x pull-right admin"></i></a>
+	<div class="image-container-sm">
+	</div>
 	<br class="clear" />
 	<p class="bold">{{vm.product.name}}</p>
 	<p>{{vm.product.description}}<br class="clear" /></p>
 	<p>{{vm.product.price | currency}}<br class="clear" /></p>
+	<a class="btn btn-default btn-primary" ng-click="vm.addToCart(vm.product._id)"><span class="glyphicon glyphicon-shopping-cart pull-left"></span><div class="vhr white"><br /></div>Add to Cart</a>
 
 </div>

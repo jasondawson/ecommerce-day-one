@@ -14,6 +14,7 @@ function CustomerAddCtrl ($timeout, mainService) {
 	vm.radio = 'Both';
 	vm.created = false;
 	vm.createForm = true;
+	vm.notifyMessage = ' has been entered!';
 
 	vm.addCustomer = function() {
 

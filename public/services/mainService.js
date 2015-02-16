@@ -6,7 +6,52 @@ angular
 
 function mainService ($http, $q) {
 
+	var cart = [];
+
+	this.getCart = function() {
+		return cart;
+	}
+
+	this.addToCart = function(id) {
+		dfd = $q.defer();
+		cart.push(id);
+		dfd.resolve(cart);
+
+		return dfd.promise;
+	}
+
+	this.clearCart = function() {
+		dfd = $q.defer();
+		cart = [];
+		dfd.resolve();
+		return dfd.promise;
+	}
+
 	var apiUrl = 'http://localhost:8080';
+
+	this.getCartDetails = function() {
+		dfd = $q.defer();
+
+		if (!cart.length) {
+			dfd.resolve();
+			return dfd.promise;
+		}
+		console.log(cart);
+		$http({
+			method: 'GET',
+			url: apiUrl + '/api/order/cartDetails',
+			params: {
+   			 "id[]": cart
+  			}
+  		})
+		.success(function(res) {
+			dfd.resolve(res);
+		})
+		.error(function(err) {
+			dfd.reject(err);
+		})
+		return dfd.promise;
+	}
 
 	this.getProducts = function() {
 		dfd = $q.defer();

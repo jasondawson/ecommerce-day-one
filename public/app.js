@@ -8,9 +8,9 @@ function config($routeProvider) {
 
 	$routeProvider
 		.when('/', {
-			templateUrl: '/views/main.html',
+			templateUrl: '/views/main.html'/*,
 			controller: 'MainCtrl',
-			controllerAs: 'vm'
+			controllerAs: 'vm'*/
 		})
 		.when('/products/create', {
 			templateUrl: '/views/editProduct.html',
@@ -81,6 +81,19 @@ function config($routeProvider) {
 					return mainService.getCustomer($route.current.params.id);
 				}
 			}
+		})
+		.when('/order/cart', {
+			templateUrl: '/views/cart.html',
+			controller: 'CartCtrl',
+			controllerAs: 'vm',
+			resolve: {
+				cartRef: function(mainService) {
+					return mainService.getCartDetails();
+				}
+			}
+		})
+		.when('/order/complete', {
+			templateUrl: '/views/thankYou.html'
 		})
 		.otherwise('/');
 }

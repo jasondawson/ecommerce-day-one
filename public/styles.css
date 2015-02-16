@@ -53,7 +53,11 @@ body {
 
 /* * {
 	outline: 1px solid red;
-}  */
+} */
+
+body {
+	background: #ecf0f1;
+}
 
 .title {
 	padding: 10px;
@@ -96,6 +100,16 @@ body {
 	margin: 3px;
 }
 
+.image-container-sm {
+	margin: 10px;	
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	border-radius: 2px;
+	background-image: url('/img/default-placeholder.png');
+	background-size: 100px 100px;
+}
+
 .profile-container {
 	padding: 5px;
 	margin: 2px;
@@ -107,7 +121,8 @@ body {
 }
 
 .profile-container p {
-	margin-bottom: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .bold {
@@ -121,6 +136,7 @@ body {
 }
 
 .main-container {
+	background: #bdc3c7;
 	margin: 50px auto 0 auto;
 	width: 60%;
 	height: 100%;
@@ -149,4 +165,16 @@ body {
 .notification {
 	padding: 5px;
 	margin-left: 10px;
+}
+
+.white {
+	background: white;
+}
+
+/* .admin {
+	visibility: hidden;
+}
+ */
+.center-text {
+	text-align: center;
 }

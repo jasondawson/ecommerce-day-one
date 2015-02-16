@@ -13,7 +13,7 @@ var app = Express();
 var mongoUri = 'mongodb://localhost:27034/eCommerce';
 
 app.use(Express.static(__dirname + '/public'));
-app.use(BodyParser.json());
+app.use(BodyParser());
 
 Mongoose.connect(mongoUri);
 db = Mongoose.connection;
@@ -34,6 +34,10 @@ app.get('/api/products/:id', ProductCtrl.getProductById);
 app.put('/api/products/:id', ProductCtrl.updateProductById);
 app.delete('/api/products/:id', ProductCtrl.deleteProductById);
 
+//order related but info from products collection
+app.get('/api/order/cartDetails', ProductCtrl.getCartDetails);
+
+
 //customers
 app.get('/api/customers', CustomerCtrl.getCustomers);
 app.post('/api/customers', CustomerCtrl.postCustomer);
@@ -43,6 +47,8 @@ app.get('/api/customers/:id', CustomerCtrl.getCustomerById);
 app.put('/api/customers/:id', CustomerCtrl.updateCustomerById);
 app.delete('/api/customers/:id', CustomerCtrl.deleteCustomerById);
 
+
+//order stuff
 
 
 app.listen(port, function() {

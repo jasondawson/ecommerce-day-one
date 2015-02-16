@@ -1,18 +1,18 @@
 <div>
 	<p class="title pull-left">Customers</p>
 	<div>
-	<div class="btn btn-default pull-right" ng-click="vm.canDelete = !vm.canDelete" ng-class="vm.canDelete ? 'btn-success' : 'btn-danger'">
+	<div class="btn btn-default pull-right admin" ng-click="vm.canDelete = !vm.canDelete" ng-class="vm.canDelete ? 'btn-success' : 'btn-danger'">
 		<i class="glyphicon pull-left" ng-class="vm.canDelete ? 'glyphicon-ok' : 'glyphicon-trash'"></i>
 			<br />
 	</div>
-		<a class="btn btn-default pull-right" href="/#/customers/add"><i class="glyphicon glyphicon-plus pull-left"></i><div class="vhr"><br /></div>New</a>
+		<a class="btn btn-default pull-right admin" href="/#/customers/add"><i class="glyphicon glyphicon-plus pull-left"></i><div class="vhr"><br /></div>New</a>
 	<br class="clear" />
 	</div>
 </div>
 
 <div>
 	<div class="product-container" ng-repeat="customer in vm.customers">
-		<div ng-click="vm.delete(customer._id)" ng-show="vm.canDelete"><i class="btn btn-danger btn-xs fa fa-trash-o pull-left"></i></div>
+		<div ng-click="vm.delete(customer._id)" ng-show="vm.canDelete"><i class="btn btn-danger btn-xs fa fa-trash-o pull-left admin"></i></div>
 		<a href="/#/customers/{{customer._id}}"><div class="col-sm-4 pull-left text-align-left">{{customer.name}}</div></a>
 		<br class="clear" />
 	</div>

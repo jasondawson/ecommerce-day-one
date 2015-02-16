@@ -1,0 +1,12 @@
+<div class="cart-container">
+<p class="title">Cart</p>
+	<div class="" ng-repeat="item in vm.cartItems">
+	<div class="product-container">
+	<p class="col-xs-3 pull-left">{{item.name}}</p>
+	<p class="col-xs-3">{{item.price | currency}}</p>
+	</div>
+	<br class="clear" />
+	</div>
+	<br class="clear" />
+	<a ng-disabled="!$root.count"class="btn btn-default btn-primary pull-right" ng-click="vm.completeOrder()"><span class="glyphicon glyphicon-credit-card pull-left"></span><div class="vhr white"><br /></div>Checkout</a>
+</div>
