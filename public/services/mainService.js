@@ -75,6 +75,20 @@ function mainService ($http, $q) {
 		return dfd.promise;
 	}
 
+	this.addCustomer = function(newCustomer) {
+		dfd = $q.defer();
+		$http.post(apiUrl + '/api/customers', newCustomer)
+			.success(function(res) {
+				console.log(res);
+				dfd.resolve(res);
+			})
+			.error(function(err) {
+				dfd.reject(err);
+			})
+
+		return dfd.promise;
+	}
+
 
 }
 

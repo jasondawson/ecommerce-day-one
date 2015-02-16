@@ -10,9 +10,15 @@
 </head>
 <body ng-app="eCommerce">
 
-<div class="container">
-<a href="/#/"><i class="fa fa-home fa-2x"></i></a>
+<div class="main-container">
+<a href="/#/"><i class="fa fa-home fa-2x fa-border"></i></a>
+	<a class="btn btn-default" href="/#/products"><span class="glyphicon glyphicon-barcode pull-left"></span><div class="vhr"><br /></div>Products</a>
+	<a class="btn btn-default" href="/#/customers"><span class="glyphicon glyphicon-user pull-left"></span><div class="vhr"><br /></div>Customers<br /></a>
+	<p class="title pull-right">eShoppe</p>
+	<br class="clear" />
+	<hr>
 <ng-view></ng-view>
+<br class="clear" />
 </div>
 
 
@@ -25,6 +31,7 @@
 	<script src="/controllers/MainCtrl.js"></script>
 	<script src="/controllers/CustomerCtrl.js"></script>
 	<script src="/controllers/CustomersCtrl.js"></script>
+	<script src="/controllers/CustomerAddCtrl.js"></script>
 	<script src="/controllers/ProductsCtrl.js"></script>
 	<script src="/controllers/ProductCtrl.js"></script>
 	<script src="/controllers/ProductCreateCtrl.js"></script>

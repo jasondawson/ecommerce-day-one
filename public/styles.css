@@ -119,10 +119,28 @@ body {
 	right: 5px;
 }
 
-.container {
+.main-container {
 	margin: 50px auto 0 auto;
 	width: 60%;
+	height: 100%;
 	border: 1px solid #000;
 	border-radius: 5px;
 	padding: 10px;
+	max-height: 550px;
+}
+
+.main-container .btn {
+	margin-left: 10px;
+}
+
+.main-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.main-img img {
+	height: 80%;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }

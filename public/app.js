@@ -47,6 +47,11 @@ function config($routeProvider) {
 				}
 			}
 		})
+		.when('/customers/add', {
+			templateUrl: '/views/editCustomer.html',
+			controller: 'CustomerAddCtrl',
+			controllerAs: 'vm'
+		})
 		.when('/customers/:id', {
 			templateUrl: '/views/customerDetails.html',
 			controller: 'CustomerCtrl',
